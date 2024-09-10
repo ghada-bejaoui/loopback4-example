@@ -1,9 +1,9 @@
-import {ApplicationConfig, AptivApplication} from './application';
+import {ApplicationConfig, ExampleApplication} from './application';
 
 export * from './application';
 
 export async function main(options: ApplicationConfig = {}) {
-  const app = new AptivApplication(options);
+  const app = new ExampleApplication(options);
   await app.boot();
   await app.start();
 

@@ -1,21 +1,21 @@
+import {AuthenticationComponent} from '@loopback/authentication';
+import {JWTAuthenticationComponent, MyUserService, UserServiceBindings} from '@loopback/authentication-jwt';
 import {BootMixin} from '@loopback/boot';
 import {ApplicationConfig} from '@loopback/core';
+import {RepositoryMixin} from '@loopback/repository';
+import {RestApplication} from '@loopback/rest';
 import {
   RestExplorerBindings,
   RestExplorerComponent,
 } from '@loopback/rest-explorer';
-import {RepositoryMixin} from '@loopback/repository';
-import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
-import {MySequence} from './sequence';
-import {JWTAuthenticationComponent, MyUserService, UserServiceBindings} from '@loopback/authentication-jwt';
 import {MongoDsDataSource} from './datasources/mongo-ds.datasource';
-import {AuthenticationComponent} from '@loopback/authentication';
+import {MySequence} from './sequence';
 
 export {ApplicationConfig};
 
-export class AptivApplication extends BootMixin(
+export class ExampleApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
 ) {
   constructor(options: ApplicationConfig = {}) {
